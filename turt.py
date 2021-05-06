@@ -1,3 +1,4 @@
+#By Abhinash Rath
 import turtle
 import time
 import random
@@ -14,7 +15,7 @@ def get_number_of_racers():
 		else:
 			print('Input is not numeric... Try Again!')
 			continue
-
+#Abhinash Rath
 		if 2 <= racers <= 10:
 			return racers
 		else:
@@ -22,7 +23,7 @@ def get_number_of_racers():
 
 def race(colors):
 	turtles = create_turtles(colors)
-
+#Abhinash Rath
 	while True:
 		for racer in turtles:
 			distance = random.randrange(1, 20)
@@ -32,6 +33,7 @@ def race(colors):
 			if y >= HEIGHT // 2 - 10:
 				return colors[turtles.index(racer)]
 
+			#Abhinash Rath
 def create_turtles(colors):
 	turtles = []
 	spacingx = WIDTH // (len(colors) + 1)
@@ -43,21 +45,23 @@ def create_turtles(colors):
 		racer.penup()
 		racer.setpos(-WIDTH//2 + (i + 1) * spacingx, -HEIGHT//2 + 20)
 		racer.pendown()
+		#Abhinash Rath
 		turtles.append(racer)
-
+#Abhinash Rath
 	return turtles
-
+#Abhinash Rath
 def init_turtle():
 	screen = turtle.Screen()
 	screen.setup(WIDTH, HEIGHT)
 	screen.title('Racing Turtle!')
-
+#Abhinash Rath
 racers = get_number_of_racers()
 init_turtle()
 
 random.shuffle(COLORS)
 colors = COLORS[:racers]
-
+#Abhinash Rath
 winner = race(colors)
 print("The winner is the turtle with color:", winner)
 time.sleep(3)
+#Abhinash Rath
